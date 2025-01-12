@@ -9,7 +9,8 @@ const NewCollections = () => {
 
   const [new_collection,setNew_collection] = useState([]);
   useEffect(()=>{
-    fetch('http://localhost:4000/newcollection')
+    //http://localhost:4000/newcollection
+    fetch('https://dailysweets-58cb7c07014c.herokuapp.com/newcollection')
   .then((resp) => resp.json())
   .then((data) => { setNew_collection(data); });
   },[])

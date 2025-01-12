@@ -25,12 +25,14 @@ const ShopContextProvider = (props) => {
     简单类比： 就像网页打开时，浏览器向服务器请求网页内容一样，useEffect 起到了“让组件加载后获取数据”的作用.
     */
     useEffect(()=>{
-        fetch('http://localhost:4000/allproducts')
+        //http://localhost:4000/allproducts
+        fetch('https://dailysweets-58cb7c07014c.herokuapp.com/allproducts')
       .then((resp) => resp.json())
       .then((data) => { setAll_Product(data); });
 
       if(localStorage.getItem('auth-token')){
-        fetch('http://localhost:4000/getcart',{
+        //http://localhost:4000/getcart
+        fetch('https://dailysweets-58cb7c07014c.herokuapp.com/getcart',{
             method: 'POST',
             headers:{
                 Accept: 'application/form-data',
@@ -53,7 +55,8 @@ const ShopContextProvider = (props) => {
     const addToCart = (itemId) => {
         setCartItems((prev)=>({...prev, [itemId]:prev[itemId] + 1}))
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/addtocart',{
+            //http://localhost:4000/addtocart
+            fetch('https://dailysweets-58cb7c07014c.herokuapp.com/addtocart',{
                 method: 'POST',
                 headers:{
                     Accept: 'application/form-data',
@@ -70,7 +73,8 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) => {
         setCartItems((prev)=>({...prev, [itemId]:prev[itemId] - 1}));
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/removefromcart',{
+            //http://localhost:4000/removefromcart
+            fetch('https://dailysweets-58cb7c07014c.herokuapp.com/removefromcart',{
                 method: 'POST',
                 headers:{
                     Accept: 'application/form-data',

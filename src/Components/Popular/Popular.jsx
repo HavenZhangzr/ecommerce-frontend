@@ -9,7 +9,8 @@ const Popular = () => {
 
   const [popularProducts,setpopularProducts] = useState([]);
   useEffect(()=>{
-    fetch('http://localhost:4000/popularinwomen')
+    //http://localhost:4000/popularinwomen
+    fetch('https://dailysweets-58cb7c07014c.herokuapp.com/popularinwomen')
   .then((resp) => resp.json())
   .then((data) => { setpopularProducts(data); });
   },[])
