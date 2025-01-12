@@ -18,7 +18,8 @@ const LoginSignup = () => {
   const login = async ()=>{
     console.log("Login Function Excuted",formData);
     let responseData;
-    await fetch('http://localhost:4000/login',{
+    //http://localhost:4000/login
+    await fetch('https://dailysweets-58cb7c07014c.herokuapp.com/login',{
       method:'POST',
       headers:{
         Accept: 'application/json',
@@ -38,7 +39,8 @@ const LoginSignup = () => {
   const signup = async ()=>{
     console.log("Signup Function Excuted",formData);
     let responseData;
-    await fetch('http://localhost:4000/signup',{
+    //http://localhost:4000/signup
+    await fetch('https://dailysweets-58cb7c07014c.herokuapp.com/signup',{
       method:'POST',
       headers:{
         Accept: 'application/json',
